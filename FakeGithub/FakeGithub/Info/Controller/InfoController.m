@@ -11,6 +11,7 @@
 #import "DevController.h"
 #import "LoginController.h"
 #import "SettingController.h"
+#import "BaseWebViewController.h"
 
 @interface InfoController()
 
@@ -49,6 +50,25 @@ static NSString *reusedIdentifier = @"infoCell";
     [_infoMenus addObject:aboutMenu];
 }
 
+- (void)githubOauthLogin {
+    // clear cookie
+    NSHTTPCookie *cookie;
+    NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    for (cookie in [storage cookies]) {
+        [storage deleteCookie:cookie];
+    }
+    
+    // clear cache
+    [[NSURLCache sharedURLCache] removeAllCachedResponses];
+
+    // start oauth login
+    NSString *redirect = @"https://github.com/IcedOtaku/FakeGithub";
+    NSString *clientId = ClientID;
+    NSString *url = [NSString stringWithFormat:@"https://github.com/login/oauth/authorize/?client_id=%@&redirect_uri=%@&state=19991128&scope=user,public_repo", clientId, redirect];
+    LoginController *aouthVC = [LoginController initWithUrl:url andTitle:@"Github OAuth Login"];
+    [self presentViewController:aouthVC animated:YES completion:nil];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSArray *infoMenu = _infoMenus[section];
     return infoMenu.count;
@@ -78,25 +98,24 @@ static NSString *reusedIdentifier = @"infoCell";
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     switch (section) {
         case 0:
-            return @"Login";
+            return @"Account";
         case 1:
-            return @"Setting";
+            return @"Advanced";
     }
     return @"Undefined";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0 && indexPath.row == 0) {
-        LoginController *loginVC  = [[LoginController alloc] init];
-        [self.navigationController presentViewController:loginVC animated:YES completion:nil];
+        [self githubOauthLogin];
     }
     if (indexPath.section == 1 && indexPath.row == 0) {
         SettingController *settingVC  = [[SettingController alloc] init];
-        [self.navigationController pushViewController:settingVC animated:YES];
+        [self presentViewController:settingVC animated:YES completion:nil];
     }
     if (indexPath.section == 1 && indexPath.row == 1) {
         DevController *devVC  = [[DevController alloc] init];
-        [self.navigationController presentViewController:devVC animated:YES completion:nil];
+        [self presentViewController:devVC animated:YES completion:nil];
     }
 }
 

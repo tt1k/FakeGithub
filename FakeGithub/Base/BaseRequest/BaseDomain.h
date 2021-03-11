@@ -9,10 +9,12 @@
 
 static NSString *officialDomain = @"https://api.github.com";
 static NSString *unOfficialDomain = @"http://trending.codehub-app.com/v2";
+static NSString *githubOauthDomain = @"https://github.com/login/oauth/access_token";
 
 typedef NS_ENUM(NSInteger, GithubResourceType) {
     GithubResourceTrending,
     GithubResourceCollections,
+    GithubResourceAccessToken,
     GithubResourceStar
 };
 

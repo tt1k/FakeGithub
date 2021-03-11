@@ -17,6 +17,8 @@
             return [NSString stringWithFormat:@"%@%@", unOfficialDomain, @"/trending" ];
         case GithubResourceCollections:
             return [NSString stringWithFormat:@"%@%@", unOfficialDomain, @"/showcases" ];
+        case GithubResourceAccessToken:
+            return [NSString stringWithFormat:@"%@", githubOauthDomain];
         case GithubResourceStar:
             return nil;
     }

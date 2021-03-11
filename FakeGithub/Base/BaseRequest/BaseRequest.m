@@ -24,25 +24,43 @@
     if (self = [super init]) {
         // init manager
         _manager = [[AFHTTPSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-        _manager.requestSerializer = [AFJSONRequestSerializer serializer];
-        [_manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
         
+        // response serializer
+        _manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+        
+        // request serializer
+        _manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+        // json data can be accepted only
+        [_manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+
         // init baseDomain
         _baseDomain = [[BaseDomain alloc] init];
     }
     return self;
 }
 
-- (NSString *)getWithResourceType:(GithubResourceType)type andParams:(NSDictionary *)dict andBlock:(void(^)(id))block {
+- (void)getWithResourceType:(GithubResourceType)type andParams:(NSDictionary *)dict andBlock:(void(^)(id))block {
     NSString *url = [_baseDomain genURLWithResourceType:type];
     [_manager GET:url parameters:dict headers:nil progress:nil success:^(NSURLSessionDataTask *task, id response) {
+        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableContainers error:nil];
         if (block) {
-            block(response);
+            block(dict);
         }
     } failure:^(NSURLSessionDataTask *task, NSError *response) {
         NSLog(@"%@", response);
     }];
-    return nil;
+}
+
+- (void)postWithResourceType:(GithubResourceType)type andParams:(NSDictionary *)dict andBlock:(void(^)(id))block {
+    NSString *url = [_baseDomain genURLWithResourceType:type];
+    [_manager POST:url parameters:dict headers:nil progress:nil success:^(NSURLSessionDataTask *task, id response) {
+        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableContainers error:nil];
+        if (block) {
+            block(dict);
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *response) {
+        NSLog(@"%@", response);
+    }];
 }
 
 @end

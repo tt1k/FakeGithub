@@ -6,9 +6,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <WebKit/WebKit.h>
 
-#import "BaseTableViewController.h"
+#import "BaseWebViewController.h"
 
-@interface LoginController : BaseTableViewController
+@interface LoginController : BaseWebViewController
 
 @end
