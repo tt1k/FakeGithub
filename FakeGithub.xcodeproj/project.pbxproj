@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7A6844F0EED15F453D6381C5 /* Pods_FakeGithub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CC9E52171263F5CFB2BB2D2 /* Pods_FakeGithub.framework */; };
+		A6E948B3B35AF1D261AA342C /* Pods_FakeGithub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 085A6CE3846F9FF6773255B7 /* Pods_FakeGithub.framework */; };
 		E2078D2025F5F17600E36656 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2078D1F25F5F17600E36656 /* LaunchScreen.storyboard */; };
 		E2078D3825F668D200E36656 /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2078D3725F668D200E36656 /* HomeController.m */; };
 		E2078D4925F66D5B00E36656 /* RepoController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2078D4825F66D5B00E36656 /* RepoController.m */; };
@@ -18,9 +18,15 @@
 		E237767C25F7EBEA00826DB4 /* DiscoverCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E237767B25F7EBEA00826DB4 /* DiscoverCell.m */; };
 		E237768825F7F97700826DB4 /* DiscoverCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E237768725F7F97700826DB4 /* DiscoverCellModel.m */; };
 		E237768D25F8033200826DB4 /* TrendingController.m in Sources */ = {isa = PBXBuildFile; fileRef = E237768C25F8033200826DB4 /* TrendingController.m */; };
-		E237769225F8034400826DB4 /* FeedController.m in Sources */ = {isa = PBXBuildFile; fileRef = E237769125F8034400826DB4 /* FeedController.m */; };
+		E260156325FBA78700E757FF /* RepoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E260156225FBA78700E757FF /* RepoModel.m */; };
+		E260156725FBAF0E00E757FF /* OrgModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E260156625FBAF0E00E757FF /* OrgModel.m */; };
+		E260156B25FBB3BF00E757FF /* GistModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E260156A25FBB3BF00E757FF /* GistModel.m */; };
+		E260156F25FBB43E00E757FF /* ProjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E260156E25FBB43E00E757FF /* ProjectModel.m */; };
+		E260157325FBB7A300E757FF /* FeedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E260157225FBB7A300E757FF /* FeedModel.m */; };
 		E280945D25FAED9A00B64B42 /* UserInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E280945C25FAED9A00B64B42 /* UserInfoCell.m */; };
 		E280946225FB027A00B64B42 /* UIImageView+FakeGithub.m in Sources */ = {isa = PBXBuildFile; fileRef = E280946125FB027A00B64B42 /* UIImageView+FakeGithub.m */; };
+		E280947B25FB850800B64B42 /* RepoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E280947A25FB850800B64B42 /* RepoListViewController.m */; };
+		E280948125FB9F5E00B64B42 /* FollowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E280948025FB9F5E00B64B42 /* FollowModel.m */; };
 		E28F958C25F87B8A00AA6336 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E28F958B25F87B8A00AA6336 /* BaseNavigationController.m */; };
 		E28F959125F8828500AA6336 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E28F959025F8828500AA6336 /* BaseTableViewController.m */; };
 		E28F959625F8867700AA6336 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E28F959525F8867700AA6336 /* MainTabBarController.m */; };
@@ -41,9 +47,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3CC9E52171263F5CFB2BB2D2 /* Pods_FakeGithub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FakeGithub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D3C7E2E338A03DADC52867E2 /* Pods-FakeGithub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FakeGithub.debug.xcconfig"; path = "Target Support Files/Pods-FakeGithub/Pods-FakeGithub.debug.xcconfig"; sourceTree = "<group>"; };
-		DED17BD777520774AC51CB19 /* Pods-FakeGithub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FakeGithub.release.xcconfig"; path = "Target Support Files/Pods-FakeGithub/Pods-FakeGithub.release.xcconfig"; sourceTree = "<group>"; };
+		085A6CE3846F9FF6773255B7 /* Pods_FakeGithub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FakeGithub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EC4118A824DEBFA39003F82 /* Pods-FakeGithub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FakeGithub.debug.xcconfig"; path = "Target Support Files/Pods-FakeGithub/Pods-FakeGithub.debug.xcconfig"; sourceTree = "<group>"; };
+		B92134D2E2EA77476AE3E8B5 /* Pods-FakeGithub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FakeGithub.release.xcconfig"; path = "Target Support Files/Pods-FakeGithub/Pods-FakeGithub.release.xcconfig"; sourceTree = "<group>"; };
 		E2078D1F25F5F17600E36656 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2078D3625F668CC00E36656 /* HomeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeController.h; sourceTree = "<group>"; };
 		E2078D3725F668D200E36656 /* HomeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeController.m; sourceTree = "<group>"; };
@@ -66,12 +72,24 @@
 		E237768725F7F97700826DB4 /* DiscoverCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiscoverCellModel.m; sourceTree = "<group>"; };
 		E237768B25F8032B00826DB4 /* TrendingController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrendingController.h; sourceTree = "<group>"; };
 		E237768C25F8033200826DB4 /* TrendingController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrendingController.m; sourceTree = "<group>"; };
-		E237769025F8033E00826DB4 /* FeedController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedController.h; sourceTree = "<group>"; };
-		E237769125F8034400826DB4 /* FeedController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedController.m; sourceTree = "<group>"; };
+		E260156125FBA78600E757FF /* RepoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepoModel.h; sourceTree = "<group>"; };
+		E260156225FBA78700E757FF /* RepoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepoModel.m; sourceTree = "<group>"; };
+		E260156525FBAF0E00E757FF /* OrgModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrgModel.h; sourceTree = "<group>"; };
+		E260156625FBAF0E00E757FF /* OrgModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrgModel.m; sourceTree = "<group>"; };
+		E260156925FBB3BF00E757FF /* GistModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GistModel.h; sourceTree = "<group>"; };
+		E260156A25FBB3BF00E757FF /* GistModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GistModel.m; sourceTree = "<group>"; };
+		E260156D25FBB43E00E757FF /* ProjectModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectModel.h; sourceTree = "<group>"; };
+		E260156E25FBB43E00E757FF /* ProjectModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectModel.m; sourceTree = "<group>"; };
+		E260157125FBB7A300E757FF /* FeedModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedModel.h; sourceTree = "<group>"; };
+		E260157225FBB7A300E757FF /* FeedModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedModel.m; sourceTree = "<group>"; };
 		E280945B25FAED9300B64B42 /* UserInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfoCell.h; sourceTree = "<group>"; };
 		E280945C25FAED9A00B64B42 /* UserInfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfoCell.m; sourceTree = "<group>"; };
 		E280946025FB026700B64B42 /* UIImageView+FakeGithub.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+FakeGithub.h"; sourceTree = "<group>"; };
 		E280946125FB027A00B64B42 /* UIImageView+FakeGithub.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+FakeGithub.m"; sourceTree = "<group>"; };
+		E280947925FB850300B64B42 /* RepoListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RepoListViewController.h; sourceTree = "<group>"; };
+		E280947A25FB850800B64B42 /* RepoListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RepoListViewController.m; sourceTree = "<group>"; };
+		E280947F25FB9F5E00B64B42 /* FollowModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowModel.h; sourceTree = "<group>"; };
+		E280948025FB9F5E00B64B42 /* FollowModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowModel.m; sourceTree = "<group>"; };
 		E28F958A25F87B8300AA6336 /* BaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
 		E28F958B25F87B8A00AA6336 /* BaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		E28F958F25F8827F00AA6336 /* BaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
@@ -113,28 +131,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A6844F0EED15F453D6381C5 /* Pods_FakeGithub.framework in Frameworks */,
+				A6E948B3B35AF1D261AA342C /* Pods_FakeGithub.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		084CB680262A81C340F16005 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3CC9E52171263F5CFB2BB2D2 /* Pods_FakeGithub.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		2FA1FC88023B500DAD895511 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D3C7E2E338A03DADC52867E2 /* Pods-FakeGithub.debug.xcconfig */,
-				DED17BD777520774AC51CB19 /* Pods-FakeGithub.release.xcconfig */,
+				3EC4118A824DEBFA39003F82 /* Pods-FakeGithub.debug.xcconfig */,
+				B92134D2E2EA77476AE3E8B5 /* Pods-FakeGithub.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		36932E27DB22969E5CD86E1D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				085A6CE3846F9FF6773255B7 /* Pods_FakeGithub.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		E2078D2425F5F35E00E36656 /* FakeGithub */ = {
@@ -195,6 +213,8 @@
 		E2078D3325F668B400E36656 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E260157125FBB7A300E757FF /* FeedModel.h */,
+				E260157225FBB7A300E757FF /* FeedModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -228,6 +248,7 @@
 		E2078D3C25F66D1100E36656 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E280946E25FB805100B64B42 /* AutoGenerated */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -244,6 +265,8 @@
 			children = (
 				E2078D4725F66D5400E36656 /* RepoController.h */,
 				E2078D4825F66D5B00E36656 /* RepoController.m */,
+				E280947925FB850300B64B42 /* RepoListViewController.h */,
+				E280947A25FB850800B64B42 /* RepoListViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -284,8 +307,6 @@
 				E2078D4E25F66D7700E36656 /* DiscoverController.m */,
 				E237768B25F8032B00826DB4 /* TrendingController.h */,
 				E237768C25F8033200826DB4 /* TrendingController.m */,
-				E237769025F8033E00826DB4 /* FeedController.h */,
-				E237769125F8034400826DB4 /* FeedController.m */,
 				E28F95BF25F9181500AA6336 /* CollectionsController.h */,
 				E28F95C025F9181C00AA6336 /* CollectionsController.m */,
 			);
@@ -370,6 +391,23 @@
 			path = BaseCategory;
 			sourceTree = "<group>";
 		};
+		E280946E25FB805100B64B42 /* AutoGenerated */ = {
+			isa = PBXGroup;
+			children = (
+				E260156D25FBB43E00E757FF /* ProjectModel.h */,
+				E260156E25FBB43E00E757FF /* ProjectModel.m */,
+				E260156925FBB3BF00E757FF /* GistModel.h */,
+				E260156A25FBB3BF00E757FF /* GistModel.m */,
+				E260156525FBAF0E00E757FF /* OrgModel.h */,
+				E260156625FBAF0E00E757FF /* OrgModel.m */,
+				E260156125FBA78600E757FF /* RepoModel.h */,
+				E260156225FBA78700E757FF /* RepoModel.m */,
+				E280947F25FB9F5E00B64B42 /* FollowModel.h */,
+				E280948025FB9F5E00B64B42 /* FollowModel.m */,
+			);
+			path = AutoGenerated;
+			sourceTree = "<group>";
+		};
 		E28F958825F87B6100AA6336 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -431,7 +469,7 @@
 				E29FCF3E25F5E439008D4787 /* FakeGithub */,
 				E29FCF3D25F5E439008D4787 /* Products */,
 				2FA1FC88023B500DAD895511 /* Pods */,
-				084CB680262A81C340F16005 /* Frameworks */,
+				36932E27DB22969E5CD86E1D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -486,11 +524,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E29FCF5525F5E43B008D4787 /* Build configuration list for PBXNativeTarget "FakeGithub" */;
 			buildPhases = (
-				F1B4E1C9ED27CF95AD18514A /* [CP] Check Pods Manifest.lock */,
+				0412B7EC1F8EB5B9B17787FB /* [CP] Check Pods Manifest.lock */,
 				E29FCF3825F5E439008D4787 /* Sources */,
 				E29FCF3925F5E439008D4787 /* Frameworks */,
 				E29FCF3A25F5E439008D4787 /* Resources */,
-				50085EB29899F7A96B062374 /* [CP] Embed Pods Frameworks */,
+				71EC6C169790BD6EE2552843 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -545,24 +583,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		50085EB29899F7A96B062374 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FakeGithub/Pods-FakeGithub-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FakeGithub/Pods-FakeGithub-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FakeGithub/Pods-FakeGithub-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F1B4E1C9ED27CF95AD18514A /* [CP] Check Pods Manifest.lock */ = {
+		0412B7EC1F8EB5B9B17787FB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -584,6 +605,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		71EC6C169790BD6EE2552843 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FakeGithub/Pods-FakeGithub-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FakeGithub/Pods-FakeGithub-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FakeGithub/Pods-FakeGithub-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -595,15 +633,18 @@
 				E2C3EA4A25F74C5A001707CC /* DevController.m in Sources */,
 				E28F95AC25F8AAC600AA6336 /* BaseDomain.m in Sources */,
 				E280945D25FAED9A00B64B42 /* UserInfoCell.m in Sources */,
+				E260156325FBA78700E757FF /* RepoModel.m in Sources */,
 				E28F95C125F9181C00AA6336 /* CollectionsController.m in Sources */,
 				E237768D25F8033200826DB4 /* TrendingController.m in Sources */,
 				E28F95CB25F9195700AA6336 /* CollectionsModel.m in Sources */,
-				E237769225F8034400826DB4 /* FeedController.m in Sources */,
 				E22BCA6A25FA66E400B815ED /* BaseUserDefaults.m in Sources */,
 				E22BCA7025FA772C00B815ED /* UserModel.m in Sources */,
 				E29FCF4125F5E439008D4787 /* AppDelegate.m in Sources */,
 				E2078D4F25F66D7700E36656 /* DiscoverController.m in Sources */,
+				E260156B25FBB3BF00E757FF /* GistModel.m in Sources */,
 				E237767325F7E02900826DB4 /* SettingController.m in Sources */,
+				E260156F25FBB43E00E757FF /* ProjectModel.m in Sources */,
+				E260157325FBB7A300E757FF /* FeedModel.m in Sources */,
 				E28F95D925F9A2F700AA6336 /* BaseWebViewController.m in Sources */,
 				E2C3EA4B25F74C5A001707CC /* InfoController.m in Sources */,
 				E29FCF5225F5E43B008D4787 /* main.m in Sources */,
@@ -611,13 +652,16 @@
 				E2C3EA4C25F74C5A001707CC /* LoginController.m in Sources */,
 				E28F959125F8828500AA6336 /* BaseTableViewController.m in Sources */,
 				E237768825F7F97700826DB4 /* DiscoverCellModel.m in Sources */,
+				E280948125FB9F5E00B64B42 /* FollowModel.m in Sources */,
 				E28F959625F8867700AA6336 /* MainTabBarController.m in Sources */,
 				E28F95A125F8966F00AA6336 /* BaseRequest.m in Sources */,
 				E28F958C25F87B8A00AA6336 /* BaseNavigationController.m in Sources */,
 				E2078D3825F668D200E36656 /* HomeController.m in Sources */,
+				E280947B25FB850800B64B42 /* RepoListViewController.m in Sources */,
 				E280946225FB027A00B64B42 /* UIImageView+FakeGithub.m in Sources */,
 				E2078D4925F66D5B00E36656 /* RepoController.m in Sources */,
 				E237767C25F7EBEA00826DB4 /* DiscoverCell.m in Sources */,
+				E260156725FBAF0E00E757FF /* OrgModel.m in Sources */,
 				E29FCF4425F5E439008D4787 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -664,7 +708,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -722,7 +766,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -739,13 +783,14 @@
 		};
 		E29FCF5625F5E43B008D4787 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D3C7E2E338A03DADC52867E2 /* Pods-FakeGithub.debug.xcconfig */;
+			baseConfigurationReference = 3EC4118A824DEBFA39003F82 /* Pods-FakeGithub.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3C72863SBG;
+				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FakeGithub/Supporting Files/PrefixHeader.pch";
 				INFOPLIST_FILE = "FakeGithub/Supporting Files/Info.plist";
@@ -762,13 +807,14 @@
 		};
 		E29FCF5725F5E43B008D4787 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DED17BD777520774AC51CB19 /* Pods-FakeGithub.release.xcconfig */;
+			baseConfigurationReference = B92134D2E2EA77476AE3E8B5 /* Pods-FakeGithub.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3C72863SBG;
+				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FakeGithub/Supporting Files/PrefixHeader.pch";
 				INFOPLIST_FILE = "FakeGithub/Supporting Files/Info.plist";

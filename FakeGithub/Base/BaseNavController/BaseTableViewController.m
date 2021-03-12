@@ -19,10 +19,13 @@
     [super viewWillAppear:animated];
     // @class HomeController, RepoController, DiscoverController, InfoController;
     // can not figure out how to use @class syntax here
-    bool judge = [self isKindOfClass:HomeController.class] || [self isKindOfClass:RepoController.class] || [self isKindOfClass:DiscoverController.class] || [self isKindOfClass:InfoController.class];
+    bool judge = [self isKindOfClass:RepoController.class] || [self isKindOfClass:DiscoverController.class] || [self isKindOfClass:InfoController.class];
     if (judge) {
         self.navigationController.navigationBarHidden = YES;
     } else {
+        if ([self isKindOfClass:HomeController.class]) {
+            return;
+        }
         UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"]
                                                                        style:UIBarButtonItemStylePlain
                                                                       target:self.navigationController

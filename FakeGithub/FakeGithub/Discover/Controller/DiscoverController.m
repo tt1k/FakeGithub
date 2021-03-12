@@ -11,7 +11,6 @@
 #import "DiscoverCellModel.h"
 #import "DiscoverCell.h"
 #import "TrendingController.h"
-#import "FeedController.h"
 #import "CollectionsController.h"
 
 @interface DiscoverController()
@@ -45,8 +44,6 @@ static NSString *reusedIdentifier = @"dicoverCell";
     // discover section
     DiscoverCellModel *trending = [DiscoverCellModel initWithTitle:@"Trending" andDescription:@"See what the GitHub community is most excited about today"];
     [_discoverMenus addObject:@[trending]];
-    DiscoverCellModel *feed = [DiscoverCellModel initWithTitle:@"Feed" andDescription:@"The feed shows you events from people you follow and repositories you watch"];
-    [_discoverMenus addObject:@[feed]];
     DiscoverCellModel *collections = [DiscoverCellModel initWithTitle:@"Collections" andDescription:@"Curated lists and insight into burgeoning industries, topics, and communities"];
     [_discoverMenus addObject:@[collections]];
 }
@@ -86,10 +83,6 @@ static NSString *reusedIdentifier = @"dicoverCell";
         [self.navigationController pushViewController:trendingVC animated:YES];
     }
     if (indexPath.section == 1 && indexPath.row == 0) {
-        FeedController *feedVC = [[FeedController alloc] init];
-        [self.navigationController pushViewController:feedVC animated:YES];
-    }
-    if (indexPath.section == 2 && indexPath.row == 0) {
         CollectionsController *collectionsVC = [[CollectionsController alloc] init];
         [self.navigationController pushViewController:collectionsVC animated:YES];
     }

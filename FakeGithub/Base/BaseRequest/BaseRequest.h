@@ -10,7 +10,7 @@
 
 @interface BaseRequest : NSObject
 
-- (void)getWithResourceType:(GithubResourceType)type andParams:(NSDictionary *)dict andBlock:(void(^)(id))block;
-- (void)postWithResourceType:(GithubResourceType)type andParams:(NSDictionary *)dict andBlock:(void(^)(id))block;
+- (void)getWithResourceType:(GithubResourceType)resourceType andParams:(NSDictionary *)dict andBlock:(void(^)(id))block;
+- (void)postWithResourceType:(GithubResourceType)resourceType andParams:(NSDictionary *)dict andBlock:(void(^)(id))block;
 
 @end

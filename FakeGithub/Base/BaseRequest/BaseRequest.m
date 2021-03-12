@@ -32,7 +32,7 @@
         // request serializer
         _manager.requestSerializer = [AFHTTPRequestSerializer serializer];
         // json data can be accepted only
-        [_manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+        [_manager.requestSerializer setValue:@"application/json,application/vnd.github.inertia-preview+json" forHTTPHeaderField:@"Accept"];
 
         // init baseDomain
         _baseDomain = [[BaseDomain alloc] init];
@@ -40,9 +40,9 @@
     return self;
 }
 
-- (void)getWithResourceType:(GithubResourceType)type andParams:(NSDictionary *)dict andBlock:(void(^)(id))block {
+- (void)getWithResourceType:(GithubResourceType)resourceType andParams:(NSDictionary *)dict andBlock:(void(^)(id))block {
     // obtain url
-    NSString *url = [_baseDomain genURLWithResourceType:type];
+    NSString *url = [_baseDomain genURLWithResourceType:resourceType];
     
     // obtain headers
     NSString *accessToken = [[BaseUserDefaults sharedDefaults] objectForKey:AccessToken];
@@ -61,8 +61,8 @@
     }];
 }
 
-- (void)postWithResourceType:(GithubResourceType)type andParams:(NSDictionary *)dict andBlock:(void(^)(id))block {
-    NSString *url = [_baseDomain genURLWithResourceType:type];
+- (void)postWithResourceType:(GithubResourceType)resourceType andParams:(NSDictionary *)dict andBlock:(void(^)(id))block {
+    NSString *url = [_baseDomain genURLWithResourceType:resourceType];
     [_manager POST:url parameters:dict headers:nil progress:nil success:^(NSURLSessionDataTask *task, id response) {
         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableContainers error:nil];
         if (block) {

@@ -14,7 +14,15 @@ static NSString *githubOauthDomain = @"https://github.com/login/oauth/access_tok
 typedef NS_ENUM(NSInteger, GithubResourceType) {
     GithubResourceTrending,
     GithubResourceCollections,
+    GithubResourceFeed,
     GithubResourceAccessToken,
+    GithubResourceFollowing,
+    GithubResourceFollowers,
+    GithubResourceRepositories,
+    GithubResourceOrganizations,
+    GithubResourceProjects,
+    GithubResourceGists,
+    GithubResourceStars,
     GithubResourceUser
 };
 
