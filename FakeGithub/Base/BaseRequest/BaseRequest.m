@@ -10,6 +10,7 @@
 #import "BaseRequest.h"
 #import "AFNetworking.h"
 #import "BaseDomain.h"
+#import "BaseUserDefaults.h"
 
 @interface BaseRequest()
 
@@ -40,11 +41,20 @@
 }
 
 - (void)getWithResourceType:(GithubResourceType)type andParams:(NSDictionary *)dict andBlock:(void(^)(id))block {
+    // obtain url
     NSString *url = [_baseDomain genURLWithResourceType:type];
-    [_manager GET:url parameters:dict headers:nil progress:nil success:^(NSURLSessionDataTask *task, id response) {
-        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableContainers error:nil];
+    
+    // obtain headers
+    NSString *accessToken = [[BaseUserDefaults sharedDefaults] objectForKey:AccessToken];
+    NSString *authorization = [NSString stringWithFormat:@"token %@", accessToken];
+    NSDictionary *headers = @{
+        @"Authorization": authorization
+    };
+    
+    // start request
+    [_manager GET:url parameters:dict headers:headers progress:nil success:^(NSURLSessionDataTask *task, id response) {
         if (block) {
-            block(dict);
+            block(response);
         }
     } failure:^(NSURLSessionDataTask *task, NSError *response) {
         NSLog(@"%@", response);

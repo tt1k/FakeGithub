@@ -53,7 +53,8 @@ static NSString *reusedIdentifier = @"trendingCell";
 - (void)loadTrendingList {
     __weak typeof(self) weakSelf = self;
     _setTrendingListBlock = ^(id response) {
-        for (NSDictionary *dict in (NSArray *)response) {
+        NSDictionary *responseDict = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableContainers error:nil];
+        for (NSDictionary *dict in responseDict) {
             NSError *error;
             NSData *data = [NSJSONSerialization dataWithJSONObject:dict
                                                            options:NSJSONWritingPrettyPrinted

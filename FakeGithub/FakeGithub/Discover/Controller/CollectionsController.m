@@ -53,7 +53,8 @@ static NSString *reusedIdentifier = @"collectionsCell";
 - (void)loadCollectionsList {
     __weak typeof(self) weakSelf = self;
     _setCollectionsListBlock = ^(id response) {
-        for (NSDictionary *dict in (NSArray *)response) {
+        NSDictionary *responseDict = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableContainers error:nil];
+        for (NSDictionary *dict in responseDict) {
             NSError *error;
             NSData *data = [NSJSONSerialization dataWithJSONObject:dict
                                                            options:NSJSONWritingPrettyPrinted

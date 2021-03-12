@@ -10,6 +10,7 @@
 
 #import "LoginController.h"
 #import "BaseRequest.h"
+#import "BaseUserDefaults.h"
 
 @interface LoginController() <WKNavigationDelegate>
 
@@ -24,37 +25,42 @@
     _request = [[BaseRequest alloc] init];
 }
 
-- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
-//    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)webView:(WKWebView *)webView didReceiveServerRedirectForProvisionalNavigation:(WKNavigation *)navigation {
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     // get url
-    NSString *url = webView.URL.absoluteString;
+    NSString *url = navigationAction.request.URL.absoluteString;
     NSString *prefix = @"https://github.com/IcedOtaku/FakeGithub?";
+    
+    // this means current navigation do not have code
+    if (url.length > prefix.length) {
+        if ([[url substringWithRange:NSMakeRange(0, prefix.length)] isEqualToString:prefix]) {
+            NSString *code = @"";
+            NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+            NSArray *urlComponents = [[url substringFromIndex:prefix.length] componentsSeparatedByString:@"&"];
+            for (NSString *keyValuePair in urlComponents) {
+                NSArray *pairComponents = [keyValuePair componentsSeparatedByString:@"="];
+                NSString *key = [[pairComponents firstObject] stringByRemovingPercentEncoding];
+                NSString *value = [[pairComponents lastObject] stringByRemovingPercentEncoding];
+                if ([key isEqualToString:@"code"]) {
+                    code = value;
+                    break;
+                }
+            }
 
-    // parse url to get code
-    NSString *code = @"";
-    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
-    NSArray *urlComponents = [[url substringFromIndex:prefix.length] componentsSeparatedByString:@"&"];
-    for (NSString *keyValuePair in urlComponents) {
-        NSArray *pairComponents = [keyValuePair componentsSeparatedByString:@"="];
-        NSString *key = [[pairComponents firstObject] stringByRemovingPercentEncoding];
-        NSString *value = [[pairComponents lastObject] stringByRemovingPercentEncoding];
-        if ([key isEqualToString:@"code"]) {
-            code = value;
-            break;
+            if (![code isEqualToString:@""]) {
+                // obtain access_token
+                [dict setValue:code forKey:@"code"];
+                [dict setValue:ClientID forKey:@"client_id"];
+                [dict setValue:ClientSecret forKey:@"client_secret"];
+                [_request postWithResourceType:GithubResourceAccessToken andParams:dict andBlock:^(id response) {
+                    NSString *accessToken = response[@"access_token"];
+                    [[BaseUserDefaults sharedDefaults] setObject:accessToken forKey:AccessToken];
+                    [self.delegate githubOAuthSuccess];
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                }];
+            }
         }
     }
-    
-    // obtain access_token
-    [dict setValue:code forKey:@"code"];
-    [dict setValue:ClientID forKey:@"client_id"];
-    [dict setValue:ClientSecret forKey:@"client_secret"];
-    [_request postWithResourceType:GithubResourceAccessToken andParams:dict andBlock:^(id response) {
-        NSString *accessToken = response[@"access_token"];
-        NSLog(@"accessToken: %@", accessToken);
-    }];
+    decisionHandler(WKNavigationActionPolicyAllow);
 }
 
 @end

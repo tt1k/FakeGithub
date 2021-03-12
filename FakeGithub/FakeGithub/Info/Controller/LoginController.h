@@ -10,6 +10,16 @@
 
 #import "BaseWebViewController.h"
 
+@protocol GithubOAuthDelegate <NSObject>
+
+@required
+- (void)githubOAuthSuccess;
+- (void)githubOAuthFailed;
+
+@end
+
 @interface LoginController : BaseWebViewController
+
+@property (weak, nonatomic) id <GithubOAuthDelegate> delegate;
 
 @end

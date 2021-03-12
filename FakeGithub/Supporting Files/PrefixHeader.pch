@@ -9,5 +9,6 @@
 #define PrefixHeader_pch
 
 #import "GithubOAuthConfig.h"
+#import "AppConfig.h"
 
 #endif

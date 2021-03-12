@@ -15,7 +15,7 @@ typedef NS_ENUM(NSInteger, GithubResourceType) {
     GithubResourceTrending,
     GithubResourceCollections,
     GithubResourceAccessToken,
-    GithubResourceStar
+    GithubResourceUser
 };
 
 @interface BaseDomain : NSObject

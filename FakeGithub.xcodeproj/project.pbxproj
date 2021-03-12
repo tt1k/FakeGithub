@@ -12,11 +12,15 @@
 		E2078D3825F668D200E36656 /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2078D3725F668D200E36656 /* HomeController.m */; };
 		E2078D4925F66D5B00E36656 /* RepoController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2078D4825F66D5B00E36656 /* RepoController.m */; };
 		E2078D4F25F66D7700E36656 /* DiscoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2078D4E25F66D7700E36656 /* DiscoverController.m */; };
+		E22BCA6A25FA66E400B815ED /* BaseUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = E22BCA6925FA66E400B815ED /* BaseUserDefaults.m */; };
+		E22BCA7025FA772C00B815ED /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E22BCA6F25FA772C00B815ED /* UserModel.m */; };
 		E237767325F7E02900826DB4 /* SettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = E237767225F7E02900826DB4 /* SettingController.m */; };
 		E237767C25F7EBEA00826DB4 /* DiscoverCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E237767B25F7EBEA00826DB4 /* DiscoverCell.m */; };
 		E237768825F7F97700826DB4 /* DiscoverCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E237768725F7F97700826DB4 /* DiscoverCellModel.m */; };
 		E237768D25F8033200826DB4 /* TrendingController.m in Sources */ = {isa = PBXBuildFile; fileRef = E237768C25F8033200826DB4 /* TrendingController.m */; };
 		E237769225F8034400826DB4 /* FeedController.m in Sources */ = {isa = PBXBuildFile; fileRef = E237769125F8034400826DB4 /* FeedController.m */; };
+		E280945D25FAED9A00B64B42 /* UserInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E280945C25FAED9A00B64B42 /* UserInfoCell.m */; };
+		E280946225FB027A00B64B42 /* UIImageView+FakeGithub.m in Sources */ = {isa = PBXBuildFile; fileRef = E280946125FB027A00B64B42 /* UIImageView+FakeGithub.m */; };
 		E28F958C25F87B8A00AA6336 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E28F958B25F87B8A00AA6336 /* BaseNavigationController.m */; };
 		E28F959125F8828500AA6336 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E28F959025F8828500AA6336 /* BaseTableViewController.m */; };
 		E28F959625F8867700AA6336 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E28F959525F8867700AA6336 /* MainTabBarController.m */; };
@@ -49,6 +53,11 @@
 		E2078D4E25F66D7700E36656 /* DiscoverController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiscoverController.m; sourceTree = "<group>"; };
 		E22BCA5B25FA456300B815ED /* GithubOAuthConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GithubOAuthConfig.h; sourceTree = "<group>"; };
 		E22BCA5C25FA45C300B815ED /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		E22BCA6425FA637100B815ED /* AppConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppConfig.h; sourceTree = "<group>"; };
+		E22BCA6825FA66DE00B815ED /* BaseUserDefaults.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseUserDefaults.h; sourceTree = "<group>"; };
+		E22BCA6925FA66E400B815ED /* BaseUserDefaults.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseUserDefaults.m; sourceTree = "<group>"; };
+		E22BCA6E25FA772C00B815ED /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		E22BCA6F25FA772C00B815ED /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		E237767125F7E02200826DB4 /* SettingController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingController.h; sourceTree = "<group>"; };
 		E237767225F7E02900826DB4 /* SettingController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingController.m; sourceTree = "<group>"; };
 		E237767A25F7EBE300826DB4 /* DiscoverCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiscoverCell.h; sourceTree = "<group>"; };
@@ -59,6 +68,10 @@
 		E237768C25F8033200826DB4 /* TrendingController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrendingController.m; sourceTree = "<group>"; };
 		E237769025F8033E00826DB4 /* FeedController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedController.h; sourceTree = "<group>"; };
 		E237769125F8034400826DB4 /* FeedController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedController.m; sourceTree = "<group>"; };
+		E280945B25FAED9300B64B42 /* UserInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfoCell.h; sourceTree = "<group>"; };
+		E280945C25FAED9A00B64B42 /* UserInfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfoCell.m; sourceTree = "<group>"; };
+		E280946025FB026700B64B42 /* UIImageView+FakeGithub.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+FakeGithub.h"; sourceTree = "<group>"; };
+		E280946125FB027A00B64B42 /* UIImageView+FakeGithub.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+FakeGithub.m"; sourceTree = "<group>"; };
 		E28F958A25F87B8300AA6336 /* BaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
 		E28F958B25F87B8A00AA6336 /* BaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		E28F958F25F8827F00AA6336 /* BaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
@@ -292,6 +305,7 @@
 		E2078D4425F66D3F00E36656 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E22BCA6D25FA771800B815ED /* AutoGenerated */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -299,6 +313,8 @@
 		E2078D4525F66D4300E36656 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E280945B25FAED9300B64B42 /* UserInfoCell.h */,
+				E280945C25FAED9A00B64B42 /* UserInfoCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -322,13 +338,43 @@
 			isa = PBXGroup;
 			children = (
 				E22BCA5B25FA456300B815ED /* GithubOAuthConfig.h */,
+				E22BCA6425FA637100B815ED /* AppConfig.h */,
 			);
 			path = BaseAppConfig;
+			sourceTree = "<group>";
+		};
+		E22BCA6725FA66CC00B815ED /* BaseUserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				E22BCA6825FA66DE00B815ED /* BaseUserDefaults.h */,
+				E22BCA6925FA66E400B815ED /* BaseUserDefaults.m */,
+			);
+			path = BaseUserDefaults;
+			sourceTree = "<group>";
+		};
+		E22BCA6D25FA771800B815ED /* AutoGenerated */ = {
+			isa = PBXGroup;
+			children = (
+				E22BCA6E25FA772C00B815ED /* UserModel.h */,
+				E22BCA6F25FA772C00B815ED /* UserModel.m */,
+			);
+			path = AutoGenerated;
+			sourceTree = "<group>";
+		};
+		E280945F25FB01D700B64B42 /* BaseCategory */ = {
+			isa = PBXGroup;
+			children = (
+				E280946025FB026700B64B42 /* UIImageView+FakeGithub.h */,
+				E280946125FB027A00B64B42 /* UIImageView+FakeGithub.m */,
+			);
+			path = BaseCategory;
 			sourceTree = "<group>";
 		};
 		E28F958825F87B6100AA6336 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				E280945F25FB01D700B64B42 /* BaseCategory */,
+				E22BCA6725FA66CC00B815ED /* BaseUserDefaults */,
 				E22BCA5A25FA454200B815ED /* BaseAppConfig */,
 				E28F95D625F9A2DF00AA6336 /* BaseWebViewController */,
 				E28F959D25F8965400AA6336 /* BaseRequest */,
@@ -548,10 +594,13 @@
 				E29FCF4725F5E439008D4787 /* ViewController.m in Sources */,
 				E2C3EA4A25F74C5A001707CC /* DevController.m in Sources */,
 				E28F95AC25F8AAC600AA6336 /* BaseDomain.m in Sources */,
+				E280945D25FAED9A00B64B42 /* UserInfoCell.m in Sources */,
 				E28F95C125F9181C00AA6336 /* CollectionsController.m in Sources */,
 				E237768D25F8033200826DB4 /* TrendingController.m in Sources */,
 				E28F95CB25F9195700AA6336 /* CollectionsModel.m in Sources */,
 				E237769225F8034400826DB4 /* FeedController.m in Sources */,
+				E22BCA6A25FA66E400B815ED /* BaseUserDefaults.m in Sources */,
+				E22BCA7025FA772C00B815ED /* UserModel.m in Sources */,
 				E29FCF4125F5E439008D4787 /* AppDelegate.m in Sources */,
 				E2078D4F25F66D7700E36656 /* DiscoverController.m in Sources */,
 				E237767325F7E02900826DB4 /* SettingController.m in Sources */,
@@ -566,6 +615,7 @@
 				E28F95A125F8966F00AA6336 /* BaseRequest.m in Sources */,
 				E28F958C25F87B8A00AA6336 /* BaseNavigationController.m in Sources */,
 				E2078D3825F668D200E36656 /* HomeController.m in Sources */,
+				E280946225FB027A00B64B42 /* UIImageView+FakeGithub.m in Sources */,
 				E2078D4925F66D5B00E36656 /* RepoController.m in Sources */,
 				E237767C25F7EBEA00826DB4 /* DiscoverCell.m in Sources */,
 				E29FCF4425F5E439008D4787 /* SceneDelegate.m in Sources */,
