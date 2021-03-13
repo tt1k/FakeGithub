@@ -16,7 +16,7 @@
 
 - (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions {
     // initialize main UINavigationController
-    UITabBarController *mainTabBarVC = [[MainTabBarController alloc] init];
+    MainTabBarController *mainTabBarVC = [[MainTabBarController alloc] init];
     
     // config window property
     _window = [[UIWindow alloc] initWithWindowScene:(UIWindowScene *)scene];

@@ -82,7 +82,7 @@ static CGFloat height = 190.0;
     }];
     
     // company icon
-    UIImageView *companyIconView = [UIImageView imageWithImage:[UIImage imageNamed:@"Info"] scaledToSize:CGSizeMake(20.0, 20.0) cornerRadius:0.0];
+    UIImageView *companyIconView = [UIImageView imageWithImage:[UIImage imageNamed:@"company"] scaledToSize:CGSizeMake(20.0, 20.0) cornerRadius:0.0];
     [self addSubview:companyIconView];
     [companyIconView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(avatarImageView.mas_left);
@@ -100,7 +100,7 @@ static CGFloat height = 190.0;
     }];
     
     // location icon
-    UIImageView *locationIconView = [UIImageView imageWithImage:[UIImage imageNamed:@"Discover"] scaledToSize:CGSizeMake(20.0, 20.0) cornerRadius:0.0];
+    UIImageView *locationIconView = [UIImageView imageWithImage:[UIImage imageNamed:@"location"] scaledToSize:CGSizeMake(20.0, 20.0) cornerRadius:0.0];
     [self addSubview:locationIconView];
     [locationIconView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(companyLabel.mas_right).with.offset(6.0);
@@ -118,7 +118,7 @@ static CGFloat height = 190.0;
     }];
     
     // blog icon
-    UIImageView *blogIconView = [UIImageView imageWithImage:[UIImage imageNamed:@"Repo"] scaledToSize:CGSizeMake(20.0, 20.0) cornerRadius:0.0];
+    UIImageView *blogIconView = [UIImageView imageWithImage:[UIImage imageNamed:@"link"] scaledToSize:CGSizeMake(20.0, 20.0) cornerRadius:0.0];
     [self addSubview:blogIconView];
     [blogIconView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(avatarImageView.mas_left);
@@ -136,7 +136,7 @@ static CGFloat height = 190.0;
     }];
     
     // follow icon
-    UIImageView *followIconView = [UIImageView imageWithImage:[UIImage imageNamed:@"Home"] scaledToSize:CGSizeMake(20.0, 20.0) cornerRadius:0.0];
+    UIImageView *followIconView = [UIImageView imageWithImage:[UIImage imageNamed:@"people"] scaledToSize:CGSizeMake(20.0, 20.0) cornerRadius:0.0];
     [self addSubview:followIconView];
     [followIconView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(avatarImageView.mas_left);

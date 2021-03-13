@@ -23,13 +23,13 @@
 
 - (void)loadTabBarItems {
     HomeController *homeVC = [[HomeController alloc] init];
-    [self addTabBarItemWithController:homeVC andNormalImage:@"Home" andSelectedImage:@"Home" andBarTitle:@"Home"];
+    [self addTabBarItemWithController:homeVC andNormalImage:@"home_on" andSelectedImage:@"home_on" andBarTitle:@"Home"];
     RepoController *repoVC = [[RepoController alloc] init];
-    [self addTabBarItemWithController:repoVC andNormalImage:@"Repo" andSelectedImage:@"Repo" andBarTitle:@"Repo"];
+    [self addTabBarItemWithController:repoVC andNormalImage:@"repo_on" andSelectedImage:@"repo_on" andBarTitle:@"Repo"];
     DiscoverController *discoverVC = [[DiscoverController alloc] init];
-    [self addTabBarItemWithController:discoverVC andNormalImage:@"Discover" andSelectedImage:@"Discover" andBarTitle:@"Discover"];
+    [self addTabBarItemWithController:discoverVC andNormalImage:@"discover_on" andSelectedImage:@"discover_on" andBarTitle:@"Discover"];
     InfoController *infoVC = [[InfoController alloc] init];
-    [self addTabBarItemWithController:infoVC andNormalImage:@"Info" andSelectedImage:@"Info" andBarTitle:@"Info"];
+    [self addTabBarItemWithController:infoVC andNormalImage:@"info_on" andSelectedImage:@"info_on" andBarTitle:@"Info"];
 }
 
 - (void)addTabBarItemWithController:(UIViewController *)viewController andNormalImage:(NSString *)normalImage andSelectedImage:(NSString *)selectedImage andBarTitle:(NSString *)barTitle {
@@ -37,9 +37,9 @@
     viewController.title = barTitle;
     viewController.tabBarItem.image = [[UIImage imageNamed:normalImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     viewController.tabBarItem.selectedImage = [[UIImage imageNamed:selectedImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    NSDictionary<NSAttributedStringKey, id> *stateControlAttr = @{NSForegroundColorAttributeName:UIColor.blackColor, NSFontAttributeName:[UIFont systemFontOfSize:12.0f]};
+    NSDictionary<NSAttributedStringKey, id> *stateControlAttr = @{NSForegroundColorAttributeName:UIColor.darkGrayColor, NSFontAttributeName:[UIFont systemFontOfSize:12.0f]};
     [viewController.tabBarItem setTitleTextAttributes:stateControlAttr forState:UIControlStateNormal];
-    NSDictionary<NSAttributedStringKey, id> *stateSelectedAttr = @{NSForegroundColorAttributeName:UIColor.blueColor, NSFontAttributeName:[UIFont systemFontOfSize:12.0f]};
+    NSDictionary<NSAttributedStringKey, id> *stateSelectedAttr = @{NSForegroundColorAttributeName:UIColor.blackColor, NSFontAttributeName:[UIFont systemFontOfSize:12.0f]};
     [viewController.tabBarItem setTitleTextAttributes:stateSelectedAttr forState:UIControlStateSelected];
     
     // using customized BaseNavigationController to wrap configed viewController

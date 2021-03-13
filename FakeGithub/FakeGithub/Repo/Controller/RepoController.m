@@ -67,7 +67,21 @@ static NSString *reusedIdentifier = @"repoCell";
     repoCell.selectionStyle = UITableViewCellSelectionStyleNone;
     repoCell.textLabel.text = repoMenuItemTitle;
     repoCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    repoCell.imageView.image = [UIImage imageNamed:@"Home"];
+    
+    // config header icon
+    if (indexPath.section == 0 && indexPath.row == 0) {
+        repoCell.imageView.image = [UIImage imageNamed:@"repositories"];
+    } else if (indexPath.section == 0 && indexPath.row == 1) {
+        repoCell.imageView.image = [UIImage imageNamed:@"organizations"];
+    } else if (indexPath.section == 0 && indexPath.row == 2) {
+        repoCell.imageView.image = [UIImage imageNamed:@"projects"];
+    } else if (indexPath.section == 0 && indexPath.row == 3) {
+        repoCell.imageView.image = [UIImage imageNamed:@"gists"];
+    } else if (indexPath.section == 0 && indexPath.row == 4) {
+        repoCell.imageView.image = [UIImage imageNamed:@"stars"];
+    } else {
+        repoCell.imageView.image = [UIImage imageNamed:@"follow"];
+    }
     return repoCell;
 }
 

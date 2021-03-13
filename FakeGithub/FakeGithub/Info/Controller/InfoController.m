@@ -119,7 +119,17 @@ static NSString *reusedIdentifier = @"infoCell";
     infoMenuItem.selectionStyle = UITableViewCellSelectionStyleNone;
     infoMenuItem.textLabel.text = infoMenuItemTitle;
     infoMenuItem.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    infoMenuItem.imageView.image = [UIImage imageNamed:@"Info"];
+    
+    // config header icon
+    if (indexPath.section == 0 && indexPath.row == 0) {
+        infoMenuItem.imageView.image = [UIImage imageNamed:@"login"];
+    }
+    if (indexPath.section == 1 && indexPath.row == 0) {
+        infoMenuItem.imageView.image = [UIImage imageNamed:@"setting"];
+    }
+    if (indexPath.section == 1 && indexPath.row == 1) {
+        infoMenuItem.imageView.image = [UIImage imageNamed:@"developer"];
+    }
     return infoMenuItem;
 }
 
