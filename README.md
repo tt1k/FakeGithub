@@ -1,5 +1,5 @@
 <div align=center>
-<img src="https://github.com/IcedOtaku/FakeGithub/blob/main/Screenshots/fake-github.jpg" width="300" height="300" style="border-radius: 60px;"/>
+<img src="./Screenshots/fake-github.jpg" width="300" height="300" style="border-radius: 60px;"/>
 </div>
 
 # FakeGithub
@@ -27,5 +27,6 @@ FakeGithub is an iOS application written using Objective-C. Opensource this proj
 
 ## Screenshot
 
-<img alt="Home" src="https://github.com/IcedOtaku/FakeGithub/blob/main/Screenshots/1.jpg" width="240"><img alt="Repo" src="https://github.com/IcedOtaku/FakeGithub/blob/main/Screenshots/2.jpg" width="240">
-<img alt="Discover" src="https://github.com/IcedOtaku/FakeGithub/blob/main/Screenshots/3.jpg" width="240"><img alt="Info" src="https://github.com/IcedOtaku/FakeGithub/blob/main/Screenshots/4.jpg" width="240">
+<img src="./Screenshots/1.png" width="400px" /><img src="./Screenshots/2.png" width="400px" />
+
+<img src="./Screenshots/3.png" width="400px" /><img src="./Screenshots/4.png" width="400px" />
