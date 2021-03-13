@@ -73,6 +73,9 @@ static CGFloat height = 190.0;
     
     // bio
     UILabel *bioLabel = [[UILabel alloc] init];
+    if (!_userModel.bio) {
+        _userModel.bio = @"This developer has not wrote description";
+    }
     bioLabel.text = _userModel.bio;
     bioLabel.font = [UIFont systemFontOfSize:14.0 weight:UIFontWeightLight];
     [self addSubview:bioLabel];
@@ -91,6 +94,9 @@ static CGFloat height = 190.0;
     
     // company
     UILabel *companyLabel = [[UILabel alloc] init];
+    if (!_userModel.company) {
+        _userModel.company = @"Empty";
+    }
     companyLabel.text = _userModel.company;
     companyLabel.font = [UIFont systemFontOfSize:12.0 weight:UIFontWeightLight];
     [self addSubview:companyLabel];
@@ -109,6 +115,9 @@ static CGFloat height = 190.0;
     
     // location
     UILabel *locationLabel = [[UILabel alloc] init];
+    if (!_userModel.location) {
+        _userModel.location = @"Empty";
+    }
     locationLabel.text = _userModel.location;
     locationLabel.font = [UIFont systemFontOfSize:12.0 weight:UIFontWeightLight];
     [self addSubview:locationLabel];
@@ -127,6 +136,9 @@ static CGFloat height = 190.0;
     
     // blog
     UILabel *blogLabel = [[UILabel alloc] init];
+    if ([_userModel.blog isEqual:@""]) {
+        _userModel.blog = @"Empty";
+    }
     blogLabel.text = _userModel.blog;
     blogLabel.font = [UIFont systemFontOfSize:12.0 weight:UIFontWeightLight];
     [self addSubview:blogLabel];

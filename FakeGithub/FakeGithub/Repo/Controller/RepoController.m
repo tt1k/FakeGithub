@@ -101,26 +101,33 @@ static NSString *reusedIdentifier = @"repoCell";
     // developer
     if (indexPath.section == 0 && indexPath.row == 0) {
         vc = [[RepoListViewController alloc] initWithDataType:GithubResourceRepositories];
+        vc.title = @"Repositories";
     }
     if (indexPath.section == 0 && indexPath.row == 1) {
         vc = [[RepoListViewController alloc] initWithDataType:GithubResourceOrganizations];
+        vc.title = @"Organizations";
     }
     if (indexPath.section == 0 && indexPath.row == 2) {
         vc = [[RepoListViewController alloc] initWithDataType:GithubResourceProjects];
+        vc.title = @"Projects";
     }
     if (indexPath.section == 0 && indexPath.row == 3) {
         vc = [[RepoListViewController alloc] initWithDataType:GithubResourceGists];
+        vc.title = @"Gists";
     }
     if (indexPath.section == 0 && indexPath.row == 4) {
         vc = [[RepoListViewController alloc] initWithDataType:GithubResourceStars];
+        vc.title = @"Stars";
     }
     
     // relations
     if (indexPath.section == 1 && indexPath.row == 0) {
         vc = [[RepoListViewController alloc] initWithDataType:GithubResourceFollowing];
+        vc.title = @"Following";
     }
     if (indexPath.section == 1 && indexPath.row == 1) {
         vc = [[RepoListViewController alloc] initWithDataType:GithubResourceFollowers];
+        vc.title = @"Followers";
     }
     
     // navigation

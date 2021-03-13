@@ -16,7 +16,7 @@ static CGFloat height = 100.0;
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        _cornerRadius = CGSizeMake(16.0, 16.0);
+        _cornerRadius = CGSizeMake(8.0, 8.0);
         self.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return self;
@@ -40,10 +40,14 @@ static CGFloat height = 100.0;
 // corner border logic
 -(void)setBorder {
     CAShapeLayer *layer = [CAShapeLayer layer];
-    layer.fillColor =  UIColor.greenColor.CGColor;
+    layer.fillColor =  UIColor.whiteColor.CGColor;
     CGRect rect = CGRectMake(margin, 0, self.frame.size.width - margin * 2, height);
     UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:rect byRoundingCorners:UIRectCornerAllCorners cornerRadii:_cornerRadius];
     layer.path = path.CGPath;
+    layer.shadowColor = UIColor.lightGrayColor.CGColor;
+    layer.shadowOpacity = 0.6;
+    layer.shadowRadius = 2.0;
+    layer.shadowOffset = CGSizeMake(1.0, 1.0);
 
     UIView *view = [[UIView alloc] initWithFrame:self.contentView.bounds];
     [view.layer insertSublayer:layer atIndex:0];

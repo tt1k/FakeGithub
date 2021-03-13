@@ -10,6 +10,7 @@
 #import "HomeController.h"
 #import "FeedModel.h"
 #import "BaseDomain.h"
+#import "FeedViewCell.h"
 
 typedef void (^setFeedListBlock)(id);
 
@@ -28,7 +29,8 @@ static NSString *reusedIdentifier = @"feedCell";
     // override init method to customize TableView style setting
     self = [super initWithStyle:UITableViewStyleGrouped];
     if (self) {
-        
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _feedList = [[NSMutableArray<FeedModel *> alloc] init];
     }
     return self;
 }
@@ -41,13 +43,6 @@ static NSString *reusedIdentifier = @"feedCell";
 - (void)initSetting {
     self.title = @"Feed";
     [self loadFeedList];
-}
-
-- (NSMutableArray<FeedModel *>*)feedList {
-    if (!_feedList) {
-        _feedList = [[NSMutableArray<FeedModel *> alloc] init];
-    }
-    return _feedList;
 }
 
 - (void)loadFeedList {
@@ -68,24 +63,23 @@ static NSString *reusedIdentifier = @"feedCell";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _feedList.count;
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return _feedList.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 80.0;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    // obtain data
-    NSString *title = _feedList[indexPath.row].actor.url;
-    
     // generate cell
-    UITableViewCell *feedCell = [tableView dequeueReusableCellWithIdentifier:reusedIdentifier];
+    FeedViewCell *feedCell = [tableView dequeueReusableCellWithIdentifier:reusedIdentifier];
     if (!feedCell) {
-        feedCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reusedIdentifier];
+        feedCell = [[FeedViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reusedIdentifier feedModel:_feedList[indexPath.section]];
     }
-    feedCell.selectionStyle = UITableViewCellSelectionStyleNone;
-    feedCell.textLabel.text = title;
     return feedCell;
 }
 

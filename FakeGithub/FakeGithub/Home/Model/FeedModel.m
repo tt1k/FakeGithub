@@ -27,6 +27,16 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSDictionary *)JSONDictionary;
 @end
 
+@interface FeedForkee (JSONConversion)
++ (instancetype)fromJSONDictionary:(NSDictionary *)dict;
+- (NSDictionary *)JSONDictionary;
+@end
+
+@interface FeedOwner (JSONConversion)
++ (instancetype)fromJSONDictionary:(NSDictionary *)dict;
+- (NSDictionary *)JSONDictionary;
+@end
+
 @interface FeedRepo (JSONConversion)
 + (instancetype)fromJSONDictionary:(NSDictionary *)dict;
 - (NSDictionary *)JSONDictionary;
@@ -216,6 +226,7 @@ NSString *_Nullable FeedModelToJSON(FeedModel *model, NSStringEncoding encoding,
 {
     static NSDictionary<NSString *, NSString *> *properties;
     return properties = properties ? properties : @{
+        @"forkee": @"forkee",
     };
 }
 
@@ -228,6 +239,7 @@ NSString *_Nullable FeedModelToJSON(FeedModel *model, NSStringEncoding encoding,
 {
     if (self = [super init]) {
         [self setValuesForKeysWithDictionary:dict];
+        _forkee = [FeedForkee fromJSONDictionary:(id)_forkee];
     }
     return self;
 }
@@ -246,7 +258,212 @@ NSString *_Nullable FeedModelToJSON(FeedModel *model, NSStringEncoding encoding,
 
 - (NSDictionary *)JSONDictionary
 {
-    return [self dictionaryWithValuesForKeys:FeedPayload.properties.allValues];
+    id dict = [[self dictionaryWithValuesForKeys:FeedPayload.properties.allValues] mutableCopy];
+
+    // Map values that need translation
+    [dict addEntriesFromDictionary:@{
+        @"forkee": NSNullify([_forkee JSONDictionary]),
+    }];
+
+    return dict;
+}
+@end
+
+@implementation FeedForkee
++ (NSDictionary<NSString *, NSString *> *)properties
+{
+    static NSDictionary<NSString *, NSString *> *properties;
+    return properties = properties ? properties : @{
+        @"id": @"identifier",
+        @"node_id": @"nodeID",
+        @"name": @"name",
+        @"full_name": @"fullName",
+        @"private": @"private",
+        @"owner": @"owner",
+        @"html_url": @"htmlURL",
+        @"description": @"theDescription",
+        @"fork": @"fork",
+        @"url": @"url",
+        @"forks_url": @"forksURL",
+        @"keys_url": @"keysURL",
+        @"collaborators_url": @"collaboratorsURL",
+        @"teams_url": @"teamsURL",
+        @"hooks_url": @"hooksURL",
+        @"issue_events_url": @"issueEventsURL",
+        @"events_url": @"eventsURL",
+        @"assignees_url": @"assigneesURL",
+        @"branches_url": @"branchesURL",
+        @"tags_url": @"tagsURL",
+        @"blobs_url": @"blobsURL",
+        @"git_tags_url": @"gitTagsURL",
+        @"git_refs_url": @"gitRefsURL",
+        @"trees_url": @"treesURL",
+        @"statuses_url": @"statusesURL",
+        @"languages_url": @"languagesURL",
+        @"stargazers_url": @"stargazersURL",
+        @"contributors_url": @"contributorsURL",
+        @"subscribers_url": @"subscribersURL",
+        @"subscription_url": @"subscriptionURL",
+        @"commits_url": @"commitsURL",
+        @"git_commits_url": @"gitCommitsURL",
+        @"comments_url": @"commentsURL",
+        @"issue_comment_url": @"issueCommentURL",
+        @"contents_url": @"contentsURL",
+        @"compare_url": @"compareURL",
+        @"merges_url": @"mergesURL",
+        @"archive_url": @"archiveURL",
+        @"downloads_url": @"downloadsURL",
+        @"issues_url": @"issuesURL",
+        @"pulls_url": @"pullsURL",
+        @"milestones_url": @"milestonesURL",
+        @"notifications_url": @"notificationsURL",
+        @"labels_url": @"labelsURL",
+        @"releases_url": @"releasesURL",
+        @"deployments_url": @"deploymentsURL",
+        @"created_at": @"createdAt",
+        @"updated_at": @"updatedAt",
+        @"pushed_at": @"pushedAt",
+        @"git_url": @"gitURL",
+        @"ssh_url": @"sshURL",
+        @"clone_url": @"cloneURL",
+        @"svn_url": @"svnURL",
+        @"homepage": @"homepage",
+        @"size": @"size",
+        @"stargazers_count": @"stargazersCount",
+        @"watchers_count": @"watchersCount",
+        @"language": @"language",
+        @"has_issues": @"hasIssues",
+        @"has_projects": @"hasProjects",
+        @"has_downloads": @"hasDownloads",
+        @"has_wiki": @"hasWiki",
+        @"has_pages": @"hasPages",
+        @"forks_count": @"forksCount",
+        @"mirror_url": @"mirrorURL",
+        @"archived": @"archived",
+        @"disabled": @"disabled",
+        @"open_issues_count": @"openIssuesCount",
+        @"license": @"license",
+        @"forks": @"forks",
+        @"open_issues": @"openIssues",
+        @"watchers": @"watchers",
+        @"default_branch": @"defaultBranch",
+        @"public": @"public",
+    };
+}
+
++ (instancetype)fromJSONDictionary:(NSDictionary *)dict
+{
+    return dict ? [[FeedForkee alloc] initWithJSONDictionary:dict] : nil;
+}
+
+- (instancetype)initWithJSONDictionary:(NSDictionary *)dict
+{
+    if (self = [super init]) {
+        [self setValuesForKeysWithDictionary:dict];
+        _owner = [FeedOwner fromJSONDictionary:(id)_owner];
+    }
+    return self;
+}
+
+- (void)setValue:(nullable id)value forKey:(NSString *)key
+{
+    id resolved = FeedForkee.properties[key];
+    if (resolved) [super setValue:value forKey:resolved];
+}
+
+- (void)setNilValueForKey:(NSString *)key
+{
+    id resolved = FeedForkee.properties[key];
+    if (resolved) [super setValue:@(0) forKey:resolved];
+}
+
+- (NSDictionary *)JSONDictionary
+{
+    id dict = [[self dictionaryWithValuesForKeys:FeedForkee.properties.allValues] mutableCopy];
+
+    // Rewrite property names that differ in JSON
+    for (id jsonName in FeedForkee.properties) {
+        id propertyName = FeedForkee.properties[jsonName];
+        if (![jsonName isEqualToString:propertyName]) {
+            dict[jsonName] = dict[propertyName];
+            [dict removeObjectForKey:propertyName];
+        }
+    }
+
+    // Map values that need translation
+    [dict addEntriesFromDictionary:@{
+        @"owner": NSNullify([_owner JSONDictionary]),
+    }];
+
+    return dict;
+}
+@end
+
+@implementation FeedOwner
++ (NSDictionary<NSString *, NSString *> *)properties
+{
+    static NSDictionary<NSString *, NSString *> *properties;
+    return properties = properties ? properties : @{
+        @"login": @"login",
+        @"id": @"identifier",
+        @"node_id": @"nodeID",
+        @"avatar_url": @"avatarURL",
+        @"gravatar_id": @"gravatarID",
+        @"url": @"url",
+        @"html_url": @"htmlURL",
+        @"followers_url": @"followersURL",
+        @"following_url": @"followingURL",
+        @"gists_url": @"gistsURL",
+        @"starred_url": @"starredURL",
+        @"subscriptions_url": @"subscriptionsURL",
+        @"organizations_url": @"organizationsURL",
+        @"repos_url": @"reposURL",
+        @"events_url": @"eventsURL",
+        @"received_events_url": @"receivedEventsURL",
+        @"type": @"type",
+        @"site_admin": @"siteAdmin",
+    };
+}
+
++ (instancetype)fromJSONDictionary:(NSDictionary *)dict
+{
+    return dict ? [[FeedOwner alloc] initWithJSONDictionary:dict] : nil;
+}
+
+- (instancetype)initWithJSONDictionary:(NSDictionary *)dict
+{
+    if (self = [super init]) {
+        [self setValuesForKeysWithDictionary:dict];
+    }
+    return self;
+}
+
+- (void)setValue:(nullable id)value forKey:(NSString *)key
+{
+    id resolved = FeedOwner.properties[key];
+    if (resolved) [super setValue:value forKey:resolved];
+}
+
+- (void)setNilValueForKey:(NSString *)key
+{
+    id resolved = FeedOwner.properties[key];
+    if (resolved) [super setValue:@(0) forKey:resolved];
+}
+
+- (NSDictionary *)JSONDictionary
+{
+    id dict = [[self dictionaryWithValuesForKeys:FeedOwner.properties.allValues] mutableCopy];
+
+    // Rewrite property names that differ in JSON
+    for (id jsonName in FeedOwner.properties) {
+        id propertyName = FeedOwner.properties[jsonName];
+        if (![jsonName isEqualToString:propertyName]) {
+            dict[jsonName] = dict[propertyName];
+            [dict removeObjectForKey:propertyName];
+        }
+    }
+
+    return dict;
 }
 @end
 

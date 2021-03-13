@@ -28,7 +28,7 @@
         case GithubResourceCollections:
             return [NSString stringWithFormat:@"%@%@", unOfficialDomain, @"/showcases"];
         case GithubResourceFeed:
-            return [NSString stringWithFormat:@"%@/users/%@%@", officialDomain, login, @"/received_events"];
+            return [NSString stringWithFormat:@"%@/users/%@%@", officialDomain, login, @"/received_events?per_page=100"];
         case GithubResourceAccessToken:
             return [NSString stringWithFormat:@"%@", githubOauthDomain];
         case GithubResourceFollowing:

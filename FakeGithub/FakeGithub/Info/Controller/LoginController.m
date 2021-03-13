@@ -20,6 +20,17 @@
 
 @implementation LoginController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    // enable preferredStatusBarStyle method
+    [self setNeedsStatusBarAppearanceUpdate];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    // specify dark content
+    return UIStatusBarStyleDarkContent;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     _request = [[BaseRequest alloc] init];
